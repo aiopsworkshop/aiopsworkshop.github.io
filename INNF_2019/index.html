@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Dustin Tran, edited by Chris Cremer">
+  <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+  <title>Invertible Neural Nets and Normalizing Flows</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/main.css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+
+
+
+
+<body>
+  <!-- <div class="container" style="margin-left:20px"> -->
+  <div class="container">
+
+    <div class="row" style="padding:20px">
+
+      <!-- <div class="hidden-xs col-sm-3 col-md-3"> -->
+      <div class="col-xs-3 col-sm-3 col-md-3">
+        <img src="./img/innf_logo.gif" style="height:70px" hspace="50"></img>
+      </div>
+
+      <div class="col-xs-12 col-sm-12 col-md-9">
+        <div class="row" style="margin-bottom:-10px;">
+
+          <!--           <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+
+            <a href="">
+              <img src="/img/nips.svg" style="margin:0px -90px
+              0 0; height:140px; width:250px;">
+            </a>
+
+          </div>
+          <div class="hidden-xs">
+
+            <a href="http://nips.cc">
+              <img src="/img/nips.svg" class="pull-right" style="margin:0px -90px
+              0 0; height:140px; width:250px;">
+            </a>
+
+          </div> -->
+
+          <h2>Workshop on Invertible Neural Nets and Normalizing Flows</h2>
+          <hr>
+          <!-- <br> -->
+          <!-- <br> -->
+          <!--           <p class="lead">
+            December 2, 2018<br>
+            <a href="https://goo.gl/maps/GZ2CkVfpFhL2">Le 1000 Conference Center</a><br>
+            <a href="https://goo.gl/maps/GZ2CkVfpFhL2">1000 Rue de la Gauchetière Ouest</a><br>
+            <a href="https://goo.gl/maps/GZ2CkVfpFhL2">Montréal, QC H3B 0A2, Canada</a><br>
+          </p> -->
+        </div>
+      </div>
+
+
+
+
+
+      <div class="col-xs-12 col-sm-3 col-md-3" id="sidebar" role="navigation" style="margin-top:-30px;">
+        <hr>
+
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./schedule/index.html">Schedule</a></li>
+          <li><a href="./call/index.html">Call for Papers</a></li>
+          <li><a href="./author_instructions/index.html">Author Instructions</a></li>
+          <li><a href="./accepted_papers/index.html">Accepted Papers</a></li>
+          <li><a href="./invited_speakers/index.html">Invited Speakers</a></li>
+        </ul>
+
+        <hr>
+
+        <ul class="nav temp">
+          <li style="padding:0px 15px 5px;">Organizers</li>
+          <li><a href="https://chinweihuang.com/">Chin-Wei Huang</a></li>
+          <li><a href="https://mila.quebec/en/person/david-scott-krueger/">David Krueger</a></li>
+          <li><a href="https://riannevdberg.github.io/">Rianne van den Berg</a></li>
+          <li><a href="https://homepages.inf.ed.ac.uk/s1459647/">George Papamakarios</a></li>
+          <li><a href="https://aidangomez.ca/">Aidan Gomez</a></li>
+          <li><a href="https://chriscremer.bitbucket.io/">Chris Cremer</a></li>
+          <li><a href="http://rtqichen.com">Ricky Chen</a></li>
+          <li><a href="https://aaroncourville.wordpress.com/">Aaron Courville</a></li>
+          <li><a href="https://danilorezende.com/">Danilo Rezende</a></li>
+        </ul>
+
+        <hr>
+        <!--         <ul class="nav temp">
+          <li style="padding:0px 15px 5px;">Advisory Committee</li>
+            <li><a href="https://www.ceremade.dauphine.fr/~xian/">Christian Robert</a></li>
+            <li><a href="http://www.cs.columbia.edu/~blei">David Blei</a></li>
+            <li><a href="http://dustintran.com/">Dustin Tran</a></li>
+            <li><a href="http://jamesmc.com">James McInerney</a></li>
+            <li><a href="http://www.stephanmandt.com">Stephan Mandt</a></li>
+        </ul> -->
+      </div>
+
+
+
+
+
+
+
+
+      <div class="col-xs-12 col-sm-9 col-md-9">
+        <!-- <hr> -->
+        <!--           <p><strong>
+          <span style="color:red;">NEWS</span>: The slides are now available <a href="./schedule">here</a>.
+          </strong></p> -->
+
+        <!-- <p><strong>Hey</strong></p> -->
+        <div class="row">
+          <h3>Overview</h3>
+          <!-- <p> -->
+          Research on invertible neural networks has recently seen a significant resurgence of interest in the ICML community.
+          <!-- The idea of translating distributions using non-linear transformations dates back to [3, 4], and was refined by [5, 6, 7].   -->
+          Invertible transformations offer two key benefits:
+          <ul>
+            <li> They allow exact reconstruction of inputs and hence obviate the need to store hidden activations in memory for backpropagation</li>
+            <li> They can be designed to track the changes in the probability density of the inputs that the transformation induces (in which case they are known as normalizing flows)</li>
+          </ul>
+          Like autoregressive models, normalizing flows can be powerful generative models that allow exact likelihood computations. With the right architecture, they can also generate data much faster than autoregressive models. As such, normalizing
+          flows have been particularly successful in density estimation and variational inference.
+          <br>
+          <br>
+          The main goals of this workshop are:
+          <ul>
+            <li> To provide an accessible introduction to normalizing flows for the wider community</li>
+            <li> To create connections among researchers in the field, and encourage new ones to enter</li>
+            <li> To track and summarize new works on invertible neural networks</li>
+            <li> To identify existing applications and explore new ones</li>
+          </ul>
+
+
+          <!-- </p> -->
+          <!--           <p>
+            This symposium is a continuation of past years workshops:
+          <ul>
+            <li><a
+            href="/2017">NIPS 2017
+            Workshop: Advances in Approximate Bayesian Inference</a></li>
+            <li><a
+            href="/2016">NIPS 2016
+            Workshop: Advances in Approximate Bayesian Inference</a></li>
+            <li><a
+            href="/2015">NIPS 2015
+            Workshop: Advances in Approximate Bayesian Inference</a></li>
+            <li><a
+            href="https://sites.google.com/site/variationalworkshop/">NIPS 2014
+            Workshop: Advances in Variational Inference</a></li>
+          </ul>
+          </p> -->
+        </div>
+
+        <div class="row">
+          <strong>We're welcoming questions from the public for our panel discussion!</strong>
+          Please submit your question <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBNrdxzokDd4t1zI7eo6QroksBy4jFQLnymfT8EV-zvD6QVw/viewform">here</a>.
+          <br>
+          <br>
+          <strong>See workshop videos  <a href='https://icml.cc/Conferences/2019/Schedule?showParentSession=3521'>here</a>!</strong>
+        </div>
+
+        <div class="row">
+          <h3>Key Dates</h3>
+          <!-- <hr> -->
+          <p>
+            <ul>
+              <!-- <li>Paper submission deadline: April 26, 2019</li> -->
+              <li> <strike> Paper submission deadline: extended to <strong>May 1st 2019</strong> at 23h59 anywhere on earth. </strike> </li>
+              <li> <strike>Acceptance notification: May 27 2019 </strike> </li>
+              <!-- <li>Submission reviews & award notifications: 13 November 2018</li> -->
+              <li> <strike>Final paper submission deadline: <strong>June 5 2019, 23h59 AoE</strong> </strike> </li>
+              <li>Workshop Date: <strong>June 15 2019</strong>, room 103</li>
+            </ul>
+          </p>
+
+
+          <p>
+            <br>
+            Questions? Contact us at
+            <a href="mailto:invertibleworkshop@gmail.com">invertibleworkshop@gmail.com</a>.
+          </p>
+
+
+        </div>
+
+
+
+
+
+        <!--       <div class="row">
+          <h3>Registration</h3>
+          <hr>
+          <p>
+            Registration is free but will be limited. <strong>Click <a href="https://www.eventbrite.ca/e/1st-symposium-on-advances-in-approximate-bayesian-inference-aabi-2018-tickets-50291872344">here</a> to register!</strong> More slots may become available as we free up the reserved slots for authors of the accepted papers. If you are unable to register, feel free to sign up on the <a href="https://goo.gl/forms/1WFV0g83gcs0sobm2">waiting list</a>. We will contact you if more slots become available. Given the limited seats, please cancel your registration if you know you will not be able to attend.
+          </p>
+        </div> -->
+
+        <!--         <div class="row">
+          <h3>Invited Speakers and Panelists</h3>
+          <hr>
+          <p>
+          Invited speakers
+          <ul>
+            <li><a href="https://www.cs.toronto.edu/~duvenaud/">David
+            Duvenaud</a> (University of Toronto)</li>
+            <li><a href="https://emtiyaz.github.io/">Emtiyaz
+            Khan</a> (RIKEN)</li>
+            <li><a href="http://www.nowozin.net/sebastian/">Sebastian
+            Nowozin</a> (Microsoft Research)</li>
+            <li><a href="http://www.tamarabroderick.com/">Tamara
+            Broderick</a> (MIT)</li>
+            <li><a href="http://user.it.uu.se/~thosc112/index.html">Thomas
+            Schon</a> (Uppsala University)</li>
+            <li><a href="http://www.robots.ox.ac.uk/~twgr">Tom
+            Rainforth</a> (University of Oxford)</li>
+          </ul>
+          </p>
+          <p>
+
+          Panel
+          <ul>
+            <li>Moderator: <a href="http://yingzhenli.net/home/en/">Yingzhen
+            Li</a> (Microsoft Research)</li>
+            <li><a href="https://ai.google/research/people/104980">Alexander
+            Alemi</a> (Google)</li>
+            <li><a href="https://www.cs.toronto.edu/~duvenaud/">David
+            Duvenaud</a> (University of Toronto)</li>
+            <li><a href="https://ai.google/research/people/KevinMurphy">Kevin
+            Murphy</a> (Google)</li>
+            <li><a href="http://cogsys.imm.dtu.dk/staff/winther/">Ole
+            Winther</a> (Technical University of Denmark)</li>
+            <li><a href="http://www.tamarabroderick.com/">Tamara
+            Broderick</a> (MIT)</li>
+          </ul>
+          </p>
+        </div>
+
+        <div class="row">
+          <h3>Organizers</h3>
+          <hr>
+          <p>
+          <ul>
+            <li><a href="https://cheng-zhang.org/">Cheng Zhang</a>
+            (Microsoft Research)</li>
+            <li><a href="http://dawenl.github.io/">Dawen Liang</a>
+            (Netflix)</li>
+            <li><a href="http://franrruiz.github.io">Francisco Ruiz</a>
+            (Columbia University)</li>
+            <li><a href="http://mlg.eng.cam.ac.uk/thang/">Thang Bui</a>
+            (University of Sydney)</li>
+          </ul>
+          </p>
+        </div>
+
+        <div class="row">
+          <h3>Advisory Committee</h3>
+          <hr>
+          <p>
+          <ul>
+            <li><a href="https://www.ceremade.dauphine.fr/~xian/">Christian Robert</a>
+            (Université Paris-Dauphine and University of Warwick)</li>
+            <li><a href="http://www.cs.columbia.edu/~blei">David Blei</a>
+            (Columbia University)</li>
+            <li><a href="http://dustintran.com/">Dustin Tran</a>
+            (Google Brain and Columbia University)</li>
+            <li><a href="http://jamesmc.com">James McInerney</a>
+            (Spotify)</li>
+            <li><a href="http://www.stephanmandt.com">Stephan Mandt</a>
+            (University of California, Irvine)</li>
+          </ul>
+          </p>
+        </div>
+
+        <div class="row">
+          <h3>Support</h3>
+          <hr>
+          <a href="https://www.microsoft.com/">
+            <img src="/img/microsoft.jpg" style="height:150px;"></img>
+          </a>
+          <a href="https://www.netflix.com">
+            <img src="/img/netflix.jpg" style="height:150px;"></img>
+          </a>
+          <a href="https://www.spotify.com/">
+            <img src="/img/spotify.jpg" style="height:130px;"></img>
+          </a>
+          <a href="https://www.prowler.io/">
+            <img src="/img/prowler.jpg" style="height:72px;"></img>
+          </a>
+          <a href="http://bayesian.org">
+            <img src="/img/isba.gif"></img>
+          </a>
+          <a href="https://ai.google">
+            <img src="/img/google.jpg" style="height:85px;"></img>
+          </a>
+        </div> -->
+
+      </div>
+
+    </div>
+
+    <hr>
+
+    <footer>
+      &nbsp;
+    </footer>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  <script type="text/javascript" src="./js/main.js"></script>
+</body>
+
+</html>

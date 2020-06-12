@@ -1,0 +1,386 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Dustin Tran, edited by Chris Cremer">
+  <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+  <title>Invertible Neural Nets and Normalizing Flows - Call for Papers</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+<!-- /*<style>
+    .authors:a { color:red }
+    a { color:red }
+    .authors:link { color:red; background-color:#0000a0; }
+    .authors:visited { color:red; background-color:#0000a0; }
+    .authors:hover { color:red; background-color:#000060; }
+    .authors:active { color:red; background-color:#00ff00; }
+</style>*/ -->
+
+</head>
+
+
+
+
+<body>
+  <!-- <div class="container" style="margin-left:20px"> -->
+  <div class="container">
+
+    <div class="row" style="padding:20px">
+
+      <div class="col-xs-3 col-sm-3 col-md-3">
+        <img src="../img/innf_logo.gif" style="height:70px" hspace="50"></img>
+      </div>
+
+      <div class="col-xs-12 col-sm-12 col-md-9">
+        <div class="row" style="margin-bottom:-10px;">
+          <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+            <!--
+            <a href="http://nips.cc">
+              <img src="/img/nips.svg" style="margin:0px -90px
+              0 0; height:140px; width:250px;">
+            </a>
+            -->
+          </div>
+          <div class="hidden-xs">
+            <!--
+            <a href="http://nips.cc">
+              <img src="/img/nips.svg" class="pull-right" style="margin:0px -90px
+              0 0; height:140px; width:250px;">
+            </a>
+            -->
+          </div>
+          <h2>Workshop on Invertible Neural Nets and Normalizing Flows</h2>
+          <br>
+          <!--           <p class="lead">
+            December 2, 2018<br>
+            <a href="https://goo.gl/maps/GZ2CkVfpFhL2">Le 1000 Conference Center</a><br>
+            <a href="https://goo.gl/maps/GZ2CkVfpFhL2">1000 Rue de la Gauchetière Ouest</a><br>
+            <a href="https://goo.gl/maps/GZ2CkVfpFhL2">Montréal, QC H3B 0A2, Canada</a><br>
+          </p> -->
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-3 col-md-3" id="sidebar" role="navigation">
+        <hr>
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../schedule/index.html">Schedule</a></li>
+          <li><a href="../call/index.html">Call for Papers</a></li>
+          <li><a href="../author_instructions/index.html">Author Instructions</a></li>
+          <li><a href="./index.html">Accepted Papers</a></li>
+          <li><a href="../invited_speakers/index.html">Invited Speakers</a></li>
+        </ul>
+        <hr>
+        <ul class="nav temp">
+          <li style="padding:0px 15px 5px;">Organizers</li>
+          <li><a href="https://chinweihuang.com/">Chin-Wei Huang</a></li>
+          <li><a href="https://mila.quebec/en/person/david-scott-krueger/">David Krueger</a></li>
+          <li><a href="https://riannevdberg.github.io/">Rianne van den Berg</a></li>
+          <li><a href="https://homepages.inf.ed.ac.uk/s1459647/">George Papamakarios</a></li>
+          <li><a href="https://aidangomez.ca/">Aidan Gomez</a></li>
+          <li><a href="https://chriscremer.bitbucket.io/">Chris Cremer</a></li>
+          <li><a href="http://rtqichen.com">Ricky Chen</a></li>
+          <li><a href="https://aaroncourville.wordpress.com/">Aaron Courville</a></li>
+          <li><a href="https://danilorezende.com/">Danilo Rezende</a></li>
+        </ul>
+      </div>
+
+      <div class="col-xs-12 col-sm-9 col-md-9">
+        <hr>
+        <div class="row">
+
+
+
+
+          <h3>INNF 2019 Accepted Papers</h3>
+          <hr>
+
+
+            <style>.title {font-weight: bold}</style>
+            <style>.paper {margin-bottom:10pt; border-bottom: solid silver 1px;}</style>
+            <style>.a {color:black;}</style>
+
+            <ol>
+            <li> 
+                <span class="title"><a href="./pdfs/INNF_2019_paper_1.pdf">Block Neural Autoregressive Flow</a></span>
+                <br>
+                <div class="paper"><span class="authors"><span><a href="https://nicola-decao.github.io">Nicola De Cao</a>, <a href="http://wilkeraziz.github.io">Wilker Aziz</a> and <a href="http://ivan-titov.org">Ivan Titov</a></span>. </span></div>
+            </li>
+            
+            <li> 
+                <span class="title"><a href="./pdfs/INNF_2019_paper_2.pdf">Sum-of-Squares Polynomial Flows</a></span>
+                <br>
+                <div class="paper"><span class="authors"><span>Priyank Jaini, Kira Selby and Yaoliang Yu</span>. </span></div>
+            </li>
+
+            
+            <li>
+                <span class="title"><a href="./pdfs/INNF_2019_paper_3.pdf">Inverting Deep Generative models, One layer at a time</a></span>
+                <br>
+                <div class="paper"><span class="authors"><span><a href="http://users.ices.utexas.edu/~leiqi">Qi Lei</a>, Ajil Jalal, Inderjit Dhillon and Alexandros Dimakis</span>. </span></div>
+            </li>
+
+
+            <li>
+                <span class="title"><a href="./pdfs/INNF_2019_paper_4.pdf">Normalizing flows for novelty detection in industrial time series data</a></span>
+                <br>
+                <div class="paper"><span class="authors"><span><a href="http://www.ascent.ai">Maximilian Schmidt</a> and <a href="http://www.ascent.ai">Marko Simic</a></span>. </span></div>
+            </li>
+
+            <li>
+                <span class="title"><a href="./pdfs/INNF_2019_paper_5.pdf">Embarassingly Parallel MCMC using Real NVP</a></span>
+                <br>
+                <div class="paper"><span class="authors"><span>Diego Mesquita, Paul Blomstedt and Samuel Kaski</span>. </span></div>
+            </li>
+
+            <li>
+                <span class="title"><a href="./pdfs/INNF_2019_paper_6.pdf">Benchmarking Invertible Architectures on Inverse Problems</a></span>
+                <br>
+                <div class="paper"><span class="authors"><span>Jakob Kruse, Lynton Ardizzone and Ullrich Köthe</span>. </span></div>
+            </li>
+
+            <li>
+                <span class="title"><a href="./pdfs/INNF_2019_paper_7.pdf">Residual Flows: Unbiased Generative Modeling with Norm-Learned i-ResNets</a></span>
+                <br>
+                <div class="paper"><span class="authors"><span><a href="http://www.cs.toronto.edu/~rtqichen/">Ricky T. Q. Chen</a>, <a href="http://www.math.uni-bremen.de/zetem/cms/detail.php?template=parse_title&amp;person=JensBehrmann&amp;language=en">Jens Behrmann</a> and <a href="https://jhjacobsen.github.io/">Jörn Jacobsen</a></span>. </span></div>
+            </li>
+
+            <li>
+                <span class="title"><a href="./pdfs/INNF_2019_paper_8.pdf">PRECOG: PREdictions Conditioned On Goals in Visual Multi-Agent Scenarios</a></span>
+                <br>
+                <div class="paper"><span class="authors"><span><a href="http://www.cs.cmu.edu/~nrhineha/">Nicholas Rhinehart</a>, <a href="https://people.eecs.berkeley.edu/~rmcallister/">Rowan McAllister</a>, Kris Kitani and Sergey Levine</span>. </span></div>
+            </li>
+
+
+            <li>
+                <span class="title"><a href="./pdfs/INNF_2019_paper_9.pdf">Improving Exploration in Soft-Actor-Critic with Normalizing Flows Policies</a></span>
+                <br>
+                <div class="paper"><span class="authors"><span>Patrick Nadeem Ward, Ariella Smofsky and Avishek Joey Bose</span>. </span></div>
+            </li>
+
+
+
+            <li>
+                <span class="title"><a href="./pdfs/INNF_2019_paper_10.pdf">JacNet: Learning Functions with Structured Jacobian</a></span>
+                <br>
+                <div class="paper"><span class="authors"><span>Safwan Hossain and Jonathan Lorraine</span>. </span></div>
+            </li>
+
+
+
+
+            <li>
+                <span class="title"><a href="./pdfs/INNF_2019_paper_12.pdf">Boosting Trust Region Policy Optimization with Normalizing Flows Policy</a></span>
+                <br>
+                <div class="paper"><span class="authors"><span>Yunhao Tang and Shipra Agrawal</span>. </span></div>
+            </li>
+
+
+
+            <li>
+                <span class="title"><a href="./pdfs/INNF_2019_paper_13.pdf">Optimal Domain Translation</a></span>
+                <br>
+                <div class="paper"><span class="authors"><span>Emmanuel de Bézenac, Ibrahim Ayed and Patrick Gallinari</span>. </span></div>
+            </li>
+
+
+
+            <li>
+                <span class="title"><a href="./pdfs/INNF_2019_paper_14.pdf">Structured Output Learning with Conditional Generative Flows</a></span>
+                <br>
+                <div class="paper"><span class="authors"><span><a href="https://yolu1055.github.io/">You Lu</a> and <a href="http://people.cs.vt.edu/~bhuang/">Bert Huang</a></span>. </span></div>
+            </li>
+
+
+            <li>
+                <span class="title"><a href="./pdfs/INNF_2019_paper_15.pdf">Cubic-Spline Flows</a></span>
+                <br>
+                <div class="paper"><span class="authors"><span><a href="https://conormdurkan.github.io/">Conor Durkan</a>, <a href="http://arturbekasov.github.io/">Artur Bekasov</a>, <a href="https://homepages.inf.ed.ac.uk/imurray2/">Iain Murray</a> and <a href="https://homepages.inf.ed.ac.uk/s1459647/">George Papamakarios</a></span>. </span></div>
+            </li>
+
+
+
+            <li>
+                <span class="title"><a href="./pdfs/INNF_2019_paper_16.pdf">Information Theory in Density Destructors</a></span>
+                <br>
+                <div class="paper"><span class="authors"><span><a href="https://jejjohnson.github.io/academic/">J. Emmanuel Johnson</a>, <a href="https://www.uv.es/lapeva/">Valero Laparra</a>, <a href="http://www.raulsantosrodriguez.com/">Raul Santos-Rodriguez</a>, <a href="https://www.uv.es/gcamps/">Gustau Camps-Valls</a> and <a href="http://isp.uv.es/excathedra.html">Jesus Malo</a></span>. </span></div>
+            </li>
+
+
+
+            <li>
+                <span class="title"><a href="./pdfs/INNF_2019_paper_17.pdf">Adversarial training of partially invertible variational autoencoders</a></span>
+                <br>
+                <div class="paper"><span class="authors"><span>Thomas Lucas, Konstantin Shmelkov, Kartheek Alahari, Cordelia Schmid and Jakob Verbeek</span>. </span></div>
+            </li>
+
+
+
+            <li>
+                <span class="title"><a href="./pdfs/INNF_2019_paper_18.pdf">VideoFlow: A Flow-Based Generative Model for Video</a></span>
+                <br>
+                <div class="paper"><span class="authors"><span>Manoj Kumar, Mohammad Babaeizadeh, Dumitru Erhan, Chelsea Finn, Sergey Levine, Laurent Dinh and Durk Kingma</span>. </span></div>
+            </li>
+
+
+
+
+            <li>
+                <span class="title"><a href="./pdfs/INNF_2019_paper_19.pdf">Monte Carlo Integration with Normalizing Flows</a></span>
+                <br>
+                <div class="paper"><span class="authors"><span><a href="https://tom94.net">Thomas Müller</a>, <a href="https://inf.ethz.ch/personal/mcbrian/">Brian McWilliams</a>, <a href="http://zurich.disneyresearch.com/~fabricer/">Fabrice Rousselle</a>, <a href="https://graphics.ethz.ch/people/grossm/home.php">Markus Gross</a> and <a href="http://drz.disneyresearch.com/~jnovak/">Jan Novák</a></span>. </span></div>
+            </li>
+
+
+
+
+            <li>
+                <span class="title"><a href="./pdfs/INNF_2019_paper_20.pdf">Semi-Conditional Normalizing Flows for Semi-Supervised Learning</a></span>
+                <br>
+                <div class="paper"><span class="authors"><span>Andrei Atanov, Alexandra Volokhova, Arsenii Ashukha, Ivan Sosnovik and Dmitry Vetrov</span>. </span></div>
+            </li>
+
+
+
+            <li>
+                <span class="title"><a href="./pdfs/INNF_2019_paper_21.pdf">Symmetric Convolutional Flow</a></span>
+                <br>
+                <div class="paper"><span class="authors"><span><a href="http://ece.engineering.ualberta.ca/">Mahdi Karami</a>, <a href="http://www.cs.ualberta.ca/~dale">Dale Schuurmans</a>, <a href="http://www.sohldickstein.com/">Jascha Sohl-Dickstein</a>, <a href="http://www.stronglyconvex.com">Daniel Duckworth</a> and Laurent Dinh</span>. </span></div>
+            </li>
+
+
+
+            <li>
+                <span class="title"><a href="./pdfs/INNF_2019_paper_22.pdf">Approximating exponential family models (not single distributions) with a two-network architecture</a></span>
+                <br>
+                <div class="paper"><span class="authors"><span>Sean Bittner and John Cunningham</span>. </span></div>
+            </li>
+
+
+
+
+
+            <li>
+                <span class="title"><a href="./pdfs/INNF_2019_paper_23.pdf">Covering up bias with Markov blankets: A post-hoc cure for attribute prior blindness</a></span>
+                <br>
+                <div class="paper"><span class="authors"><span>Vinay Prabhu, Dian Ang Yap and Alexandar Wang</span>. </span></div>
+            </li>
+
+
+
+            <li>
+                <span class="title"><a href="./pdfs/INNF_2019_paper_24.pdf">Neural Networks with Cheap Differential Operators</a></span>
+                <br>
+                <div class="paper"><span class="authors"><span><a href="http://www.cs.toronto.edu/~rtqichen/">Ricky T. Q. Chen</a> and <a href="http://www.cs.toronto.edu/~duvenaud/">David Duvenaud</a></span>. </span></div>
+            </li>
+
+
+
+            <li>
+                <span class="title"><a href="./pdfs/INNF_2019_paper_25.pdf">AlignFlow: Learning from multiple domains via normalizing flows</a></span>
+                <br>
+                <div class="paper"><span class="authors"><span>Aditya Grover, Christopher Chute, Rui Shu, Zhangjie Cao and Stefano Ermon</span>. </span></div>
+            </li>
+
+
+
+            <li>
+                <span class="title"><a href="./pdfs/INNF_2019_paper_26.pdf">Invertible ConvNets</a></span>
+                <br>
+                <div class="paper"><span class="authors"><span><a href="https://mfinzi.github.io/">Marc Finzi</a>, Pavel Izmailov, Wesley Maddox, Polina Kirichenko and Andrew Wilson</span>. </span></div>
+            </li>
+
+
+
+            <li>
+                <span class="title"><a href="./pdfs/INNF_2019_paper_27.pdf">On Mixed Conditional FFJORD with Large-Batch Training</a></span>
+                <br>
+                <div class="paper"><span class="authors"><span><a href="http://tannguyen.blogs.rice.edu/">Tan Nguyen</a>, Animesh Garg, Anjul Patney, Richard Baraniuk and Anima Anandkumar</span>. </span></div>
+            </li>
+
+
+            <li>
+                <span class="title"><a href="./pdfs/INNF_2019_paper_28.pdf">Semi-Supervised Learning with Normalizing Flows</a></span>
+                <br>
+                <div class="paper"><span class="authors"><span>Pavel Izmailov, Polina Kirichenko, Marc Finzi and Andrew Wilson</span>. </span></div>
+            </li>
+
+
+
+            <li>
+                <span class="title"><a href="./pdfs/INNF_2019_paper_29.pdf">Investigating the Impact of Normalizing Flows on Latent Variable Machine Translation</a></span>
+                <br>
+                <div class="paper"><span class="authors"><span>Michael Przystupa, Mark Schmidt and Muhammad Abdul-Mageed</span>. </span></div>
+            </li>
+
+
+
+            <li>
+                <span class="title"><a href="./pdfs/INNF_2019_paper_30.pdf">Improving Normalizing Flows via Better Orthogonal Parameterizations</a></span>
+                <br>
+                <div class="paper"><span class="authors"><span>Adam Golinski, Mario Lezcano-Casado and Tom Rainforth</span>. </span></div>
+            </li>
+
+
+
+            <li>
+                <span class="title"><a href="./pdfs/INNF_2019_paper_31.pdf">MinvNet: Building Invertible Neural Networks with Masked Convolutions</a></span>
+                <br>
+                <div class="paper"><span class="authors"><span>Yang Song, Chenlin Meng and Stefano Ermon</span>. </span></div>
+            </li>
+
+
+            <li>
+                <span class="title"><a href="./pdfs/INNF_2019_paper_32.pdf">Learning Generative Samplers using Relaxed Injective Flow</a></span>
+                <br>
+                <div class="paper"><span class="authors"><span>Abhishek Kumar, Ben Poole and Kevin Murphy</span>. </span></div>
+            </li>
+
+
+            </ol>
+
+
+
+        </div>
+
+        <footer>
+          &nbsp;
+        </footer>
+
+      </div>
+
+      <!-- JavaScript -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+      </script>
+      <script type="text/javascript" src="../js/main.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
