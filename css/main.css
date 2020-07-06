@@ -9,7 +9,7 @@ span:lang(cn) {
 }
 .temp > li > a {
   display: inline;
-  padding: 0px 15px !important;
+  padding: 0px 0px !important;
 }
 .temp > li > a:hover,
 .temp > li > a:focus {
@@ -21,3 +21,21 @@ span:lang(cn) {
   text-decoration: underline;
   background-color: transparent;
 }
+
+li.affiliation {
+  margin-left: 1em; 
+  margin-bottom: 0.6em; 
+  padding-bottom: 0;
+}
+li.name {
+  margin-left: 1em;
+  padding-bottom: 0;
+  font-weight: bold;
+}
+li.head {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 1em;
+  font-weight: bold;
+}
+
